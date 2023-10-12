@@ -9,7 +9,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"format": "prettier --plugin-search-dir . --write .",
+        "types": "npx supabase gen types typescript --project-id \"$PROJECT_REF\" > src/lib/database.types.ts"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
@@ -30,7 +31,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@supabase/auth-helpers-sveltekit": "^0.10.1",
 		"@supabase/supabase-js": "^2.26.0",
 		"zod": "^3.21.4"
 	}
